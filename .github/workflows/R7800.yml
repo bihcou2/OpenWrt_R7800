@@ -14,6 +14,19 @@ on:
 permissions:
   contents: read
 
+env:
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
+  FEEDS_CONF: feeds.conf.default
+  CONFIG_FILE: R7800.config
+  UPLOAD_BIN_DIR: true
+  UPLOAD_FIRMWARE: true
+  UPLOAD_COWTRANSFER: false
+  UPLOAD_WETRANSFER: false
+  UPLOAD_RELEASE: true
+  TZ: Asia/Shanghai
+
+
 jobs:
 
   build_openwrt:
@@ -40,6 +53,10 @@ jobs:
 
       - name: Checkout OpenWrt
         uses: actions/checkout@v3
+        
+
+      - name: "Copy config"
+        run: cp R7800.config .config && make defconfig && make oldconfig
 
       - name: Update feeds
         run: |
