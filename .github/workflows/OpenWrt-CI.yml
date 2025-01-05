@@ -48,7 +48,7 @@ jobs:
           ./scripts/feeds install -a
 
       - name: "Copy config"
-        run: cp LEDE-R7800-Lite.config .config && make defconfig && make oldconfig
+        run: cp R7800.config .config && make defconfig && make oldconfig
 
       - name: Download packages
         run: make download -j16
