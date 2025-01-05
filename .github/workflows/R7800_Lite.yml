@@ -71,8 +71,7 @@ jobs:
           sudo -E apt clean
           sudo -E timedatectl set-timezone "Asia/Shanghai"
 
-      - name: Checkout OpenWrt
-        uses: actions/checkout@v3
+
         
     - name: Clone source code
       working-directory: /workdir
