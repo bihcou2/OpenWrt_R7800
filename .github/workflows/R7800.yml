@@ -7,9 +7,10 @@
 # https://github.com/P3TERX/Actions-OpenWrt
 # Description: Build OpenWrt using GitHub Actions
 #
-on :
+
 name: R780
 
+on :
 jobs:
     build:
         runs-on: ubuntu-latest
